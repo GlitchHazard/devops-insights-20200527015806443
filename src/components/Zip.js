@@ -5,7 +5,7 @@ function Zip(props) {
     const [validationError, setValidationError] = useState(null);
 
     const validate = (event) => {
-        const zipCodePattern = /^[A-Za-z]+/;
+        const zipCodePattern = /^[A-Za-z]+,\sNZ/;
         const valid = zipCodePattern.test(event.target.value);
         if (!valid) {
             setValidationError('Does Not Match Any City');
