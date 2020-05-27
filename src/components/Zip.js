@@ -5,7 +5,7 @@ function Zip(props) {
     const [validationError, setValidationError] = useState(null);
 
     const validate = (event) => {
-        const zipCodePattern = /^\D$/;
+        const zipCodePattern = /^[A-Za-z]+/;
         const valid = zipCodePattern.test(event.target.value);
         if (!valid) {
             setValidationError('Does Not Match Any City');
@@ -30,7 +30,7 @@ function Zip(props) {
                         type="text" 
                         className="form-control" 
                         id="usr" 
-                        placeholder="US Zip Code (5 digit)"
+                        placeholder="NZ City Name"
                         onKeyPress={(event) => {
                             if (event.key === "Enter") {
                                 validate(event);
