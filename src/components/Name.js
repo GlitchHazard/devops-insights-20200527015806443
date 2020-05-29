@@ -12,6 +12,7 @@ function Name(props) {
             props.clearResponse();
         } else {
             setValidationError('');
+            moveTo(event.target.value);
             props.onNameChange(event.target.value);
         }
     };
