@@ -27,7 +27,9 @@ function NameResponse(props) {
 					var point;
 					for (var key in data) {
 						for (var i = 0; i < data[key].length; i++) {
-							if (data[key][i].name == props.responseData.name) {
+							point = {lat: -37.78333, lng: 175.28333};
+							document.writeln(props.responseData.name, " ", point);
+							if (data[key][i].name === props.responseData.name) {
 								point = {lat: data[key][i].coord.lat, lng: data[key][i].coord.lon};
 								document.writeln(props.responseData.name, " ", point);
 							}
