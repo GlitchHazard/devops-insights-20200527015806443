@@ -25,15 +25,7 @@ function NameResponse(props) {
 				});
 				function appendData(data) {
 					var point;
-					for (var key in data) {
-						for (var i = 0; i < data[key].length; i++) {
-							point = {lat: -37.78333, lng: 175.28333};
-							document.getElementById("head").innerHTML = data[key][i].name; 
-							if (data[key][i].name == props.responseData.name) {
-								point = {lat: data[key][i].coord.lat, lng: data[key][i].coord.lon};
-							}
-						}
-					}
+					point = {lat: props.responseData.coord.lat, lng: props.responseData.coord.lon};
 					window.map.panTo(point);
 				} 
         return (
