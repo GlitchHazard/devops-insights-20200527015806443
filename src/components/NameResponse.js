@@ -2,7 +2,6 @@ import React from 'react';
 
 function NameResponse(props) {
 
-	map.panTo()
     if(props.responseData === null || props.responseData === '') {
         return null;
     }
