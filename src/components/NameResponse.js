@@ -16,12 +16,7 @@ function NameResponse(props) {
     }
 
     if(props.responseData.cod === 200) {
-        return (
-            <div className="col-sm-8">
-	            fetch('citylist.json')
-				.then(function (response) {
-					return response.json();
-				})
+    			fetch('citylist.json')
 				.then(function (data) {
 					appendData(data);
 				})
@@ -40,6 +35,8 @@ function NameResponse(props) {
 					}
 					window.map.panTo(point);
 				} 
+        return (
+            <div className="col-sm-8">
                 <table className="table table-info table-hover">
                     <tbody>
                         <tr>
