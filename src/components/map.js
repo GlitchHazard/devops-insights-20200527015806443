@@ -18,6 +18,6 @@
 			      		}
 			    	}
 			   	}
-			   	map.panTo(point);
+			   	window.map.panTo(point);
         	}      		
       	}
