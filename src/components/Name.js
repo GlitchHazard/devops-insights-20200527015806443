@@ -12,27 +12,6 @@ function Name(props) {
             props.clearResponse();
         } else {
             setValidationError('');
-            fetch('citylist.json')
-            .then(function (response) {
-                return response.json();
-            })
-            .then(function (data) {
-                appendData(data);
-            })
-            .catch(function (err) {
-                console.log('error: ' + err);
-            });
-			function appendData(data) {
-				var point;
-			    for (var key in data) {
-			    	for (var i = 0; i < data[key].length; i++) {
-			      		if (data[key][i].name == event.target.value) {
-			      			point = {lat: data[key][i].coord.lat, lng: data[key][i].coord.lon};
-			      		}
-			    	}
-			   	}
-			   	window.map.panTo(point);
-        	}      
             props.onNameChange(event.target.value);
         }
     };

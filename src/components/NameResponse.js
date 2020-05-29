@@ -18,11 +18,32 @@ function NameResponse(props) {
     if(props.responseData.cod === 200) {
         return (
             <div className="col-sm-8">
+	            fetch('citylist.json')
+				.then(function (response) {
+					return response.json();
+				})
+				.then(function (data) {
+					appendData(data);
+				})
+				.catch(function (err) {
+					console.log('error: ' + err);
+				});
+				function appendData(data) {
+					var point;
+					for (var key in data) {
+						for (var i = 0; i < data[key].length; i++) {
+							if (data[key][i].name == props.responseData.name) {
+								point = {lat: data[key][i].coord.lat, lng: data[key][i].coord.lon};
+							}
+						}
+					}
+					window.map.panTo(point);
+				} 
                 <table className="table table-info table-hover">
                     <tbody>
                         <tr>
                             <td>City</td>
-                            <td>{props.responseData.name}</td>
+                            <td>{props.responseData.name}</td>     
                         </tr>
                         <tr>
                             <td>Temperature</td>
