@@ -61,15 +61,7 @@
 			      		var point = {lat: data[key][i].coord.lat, lng: data[key][i].coord.lon};
 			     		var marker = new google.maps.Marker({position: point, map: map});
 			     		marker.addListener('click', function() {
-			     			for (var key1 in data) {
-						      for (var j = 0; j < data[key1].length; j++) {
-						        if (marker.get('position').lat() === data[key1][j].coord.lat) {
-						          if (marker.get('position').lng() === data[key1][j].coord.lon) {
-						            document.getElementById('usr').value = data[key1][j].name;
-						          }
-						        }
-						      }
-						    }
+			     			document.getElementById('usr').value = data[key][i].name;
 			     		});
 			    	}
 			   	}
