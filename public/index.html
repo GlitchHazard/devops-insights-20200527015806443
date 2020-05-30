@@ -62,6 +62,7 @@
 			     		var marker = new google.maps.Marker({position: point, map: map, title: data[key][i].name});
 			     		marker.addListener('click', function() {
 			     			document.getElementById('usr').value = this.getTitle();
+			     			document.getElementById('usr').focus();
 			     		});
 			    	}
 			   	}
