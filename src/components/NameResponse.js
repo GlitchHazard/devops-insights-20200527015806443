@@ -27,7 +27,9 @@ function NameResponse(props) {
 			function appendData(data) {
 			var point;
 			point = {lat: props.responseData.coord.lat, lng: props.responseData.coord.lon};
+			window.map.setZoom(5);
 			window.map.panTo(point);
+			window.map.setZoom(10);
 			} 
 	        return (
 	            <div className="col-sm-8">
