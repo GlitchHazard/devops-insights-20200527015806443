@@ -59,9 +59,9 @@
 			    for (var key in data) {
 			    	for (var i = 0; i < data[key].length; i++) {
 			      		var point = {lat: data[key][i].coord.lat, lng: data[key][i].coord.lon};
-			     		var marker = new google.maps.Marker({position: point, map: map});
+			     		var marker = new google.maps.Marker({position: point, map: map, title: data[key][i].name});
 			     		marker.addListener('click', function() {
-			     			document.getElementById('usr').value = data[key][i].name;
+			     			document.getElementById('usr').value = this.getTitle();
 			     		});
 			    	}
 			   	}
