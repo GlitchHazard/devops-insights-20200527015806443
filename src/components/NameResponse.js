@@ -19,13 +19,13 @@ function NameResponse(props) {
     	if (props.responseData.sys.country == "NZ") {
 	    	var point;
 			point = {lat: props.responseData.coord.lat, lng: props.responseData.coord.lon};
-			marker.setPosition(point);
-			marker.setTitle(props.responseData.name)
-			marker.addListener('click', function() {
+			window.marker.setPosition(point);
+			window.marker.setTitle(props.responseData.name)
+			window.marker.addListener('click', function() {
 			     			document.getElementById('usr').value = this.getTitle();
 			     			document.getElementById('usr').focus();
 			     		});    	
-			marker.setMap(map);
+			window.marker.setMap(map);
 			window.map.setZoom(5);
 			window.map.panTo(point);
 			window.map.setZoom(10);
