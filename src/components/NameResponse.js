@@ -19,11 +19,13 @@ function NameResponse(props) {
     	if (props.responseData.sys.country == "NZ") {
 	    	var point;
 			point = {lat: props.responseData.coord.lat, lng: props.responseData.coord.lon};
-			var marker = new google.maps.Marker({position: point, map: window.map, title: props.responseData.name});
+			marker.setPosition(point);
+			marker.setTitle(props.responseData.name)
 			marker.addListener('click', function() {
 			     			document.getElementById('usr').value = this.getTitle();
 			     			document.getElementById('usr').focus();
-			     		});
+			     		});    	
+			marker.setMap(map);
 			window.map.setZoom(5);
 			window.map.panTo(point);
 			window.map.setZoom(10);
