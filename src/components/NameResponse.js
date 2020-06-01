@@ -25,7 +25,7 @@ function NameResponse(props) {
 			     			document.getElementById('usr').value = this.getTitle();
 			     			document.getElementById('usr').focus();
 			     		});    	
-			window.marker.setMap(map);
+			window.marker.setMap(window.map);
 			window.map.setZoom(5);
 			window.map.panTo(point);
 			window.map.setZoom(10);
