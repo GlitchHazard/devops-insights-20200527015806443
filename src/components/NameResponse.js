@@ -17,20 +17,16 @@ function NameResponse(props) {
 
     if(props.responseData.cod === 200) {
     	if (props.responseData.sys.country == "NZ") {
-	    	fetch('citylist.json')
-			.then(function (data) {
-				appendData(data);
-			})
-			.catch(function (err) {
-				console.log('error: ' + err);
-			});
-			function appendData(data) {
-			var point;
+	    	var point;
 			point = {lat: props.responseData.coord.lat, lng: props.responseData.coord.lon};
+			var marker = new google.maps.Marker({position: point, map: window.map, title: props.responseData.name});
+			marker.addListener('click', function() {
+			     			document.getElementById('usr').value = this.getTitle();
+			     			document.getElementById('usr').focus();
+			     		});
 			window.map.setZoom(5);
 			window.map.panTo(point);
 			window.map.setZoom(10);
-			} 
 	        return (
 	            <div className="col-sm-8">
 	                <table className="table table-info table-hover">
