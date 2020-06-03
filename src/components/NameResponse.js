@@ -1,5 +1,9 @@
 import React from 'react';
 
+var imported = document.createElement("script");
+imported.src = "../map.js";
+document.getElementsByTagName("head")[0].appendChild(imported);
+
 function NameResponse(props) {
 
     if(props.responseData === null || props.responseData === '') {
