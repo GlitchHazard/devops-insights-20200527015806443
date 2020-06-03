@@ -1,8 +1,6 @@
 import React from 'react';
 
-var imported = document.createElement("script");
-imported.src = "../map.js";
-document.getElementsByTagName("head")[0].appendChild(imported);
+document.write("<script src='map.js' type='text/javascript'></script>");
 
 function NameResponse(props) {
 
