@@ -40,22 +40,3 @@ describe('Name Test', function() {
     done();
   });
 });
-
-const api = '`https://api.openweathermap.org/data/2.5/weather?appid=6b7b471967dd0851d0010cdecf28f829&units=metric&q=${NameValue},{},NZ,us`';
-const relativeUrl = '/persons';
-
-
-describe('API Test', function() {
-  beforeEach(function() {
-
-  });
-  afterEach(function() {
-  	
-  });
-  it('should be able to create a site', function async () {
-      const response = await fetch(relativeUrl)
-        .set('Content-Type', 'application/json');
-      expect(response).to.have.status(200);
-    });
-});
-
