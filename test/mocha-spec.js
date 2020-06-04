@@ -5,17 +5,6 @@ var assert = chai.assert;
 var should = chai.should;
 chai.config.includeStack = false;
 
-describe('My test suite', function() {
-  beforeEach(function() {
-  });
-  afterEach(function() {
-  });
-  it('Test case', function(done) {
-    expect(true).to.be.equal(true);
-    done();
-  });
-});
-
 describe('Name Test', function() {
   beforeEach(function() {
 
@@ -39,5 +28,23 @@ describe('Name Test', function() {
     expect(NameCodePattern.test(nameIncorrect3)).to.be.equal(false); 
     done();
   });
+});
+
+const api = '`https://api.openweathermap.org/data/2.5/weather?appid=6b7b471967dd0851d0010cdecf28f829&units=metric&q=${NameValue},{},NZ,us`';
+const relativeUrl = '/persons';
+
+
+describe('API Test', function() {
+  beforeEach(function() {
+
+  });
+  afterEach(function() {
+  	
+  });
+  it('should be able to create a site', function async () {
+      const response = await api.get(relativeUrl)
+        .set('Content-Type', 'application/json');
+      expect(response).to.have.status(200);
+    });
 });
 
