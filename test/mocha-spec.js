@@ -24,7 +24,7 @@ describe('Name Test', function() {
   	
   });
   it('Test case', function(done) {
-  	var NameCodePattern = /^[A-Za-z]+/;
+  	var NameCodePattern = /\b[^\d\W]+\b/;
   	var nameCorrect = "Hamilton";
   	var nameCorrect2 = "Auckland";
   	var nameCorrect3 = "Wellington";

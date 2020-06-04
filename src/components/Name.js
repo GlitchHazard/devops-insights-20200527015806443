@@ -5,7 +5,7 @@ function Name(props) {
     const [validationError, setValidationError] = useState(null);
 
     const validate = (event) => {
-        const NameCodePattern = /^[A-Za-z]+/;
+        const NameCodePattern = /\b[^\d\W]+\b/;
         const valid = NameCodePattern.test(event.target.value);
         if (!valid) {
             setValidationError('Does Not Match Any City');
