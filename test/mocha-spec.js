@@ -29,8 +29,8 @@ describe('Name Test', function() {
   	var nameCorrect2 = "Auckland";
   	var nameCorrect3 = "Wellington";
   	var nameIncorrect = "12345";
-  	var nameIncorrect2 = "Chicago";
-  	var nameIncorrect3 = "Hamiton";
+  	var nameIncorrect2 = "09dcsd8";
+  	var nameIncorrect3 = "Hamiton01";
     expect(NameCodePattern.test(nameCorrect)).to.be.equal(true); 
     expect(NameCodePattern.test(nameCorrect2)).to.be.equal(true); 
     expect(NameCodePattern.test(nameCorrect3)).to.be.equal(true); 
