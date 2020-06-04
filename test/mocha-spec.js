@@ -5,6 +5,17 @@ var assert = chai.assert;
 var should = chai.should;
 chai.config.includeStack = false;
 
+describe('My test suite', function() {
+  beforeEach(function() {
+  });
+  afterEach(function() {
+  });
+  it('Test case', function(done) {
+    expect(true).to.be.equal(true);
+    done();
+  });
+});
+
 describe('Name Test', function() {
   beforeEach(function() {
 
@@ -42,7 +53,7 @@ describe('API Test', function() {
   	
   });
   it('should be able to create a site', function async () {
-      const response = await api.get(relativeUrl)
+      const response = await fetch(relativeUrl)
         .set('Content-Type', 'application/json');
       expect(response).to.have.status(200);
     });
